@@ -2,6 +2,14 @@
 #### If the sizes of two arrays are similar, we go through both arrays and record intersections. Time: O(m+n). Space: O(1) except output.
 #### If one array is significantly larger than the other, apply binary seach for each element in the shorter array in the longer array. If found: add to intersection. given m>n-->Time: O(nlogm). Space: O(1) except output.
 
+#### Follow Up: Union? if not found, add it. add shorter array at last.
+#### Follow Up: Unsorted arrays? m>n--> Time complexity: O(nlogn+mlogn)
+1) Initialize intersection I as empty.
+2) Find smaller of m and n and sort the smaller array.
+3) For every element x of larger array, do following
+…….b) Binary Search x in smaller array. If x is present, then copy it to I.
+4) Return I.
+
 ```C++
 #include <iostream>
 #include <vector>
